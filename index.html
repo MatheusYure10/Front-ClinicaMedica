@@ -1,33 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login - Clínica Médica</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/estilo.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="tela-login">
-      <div class="login-box">
-        <h2 class="text-center mb-4">Login</h2>
-        <form>
-          <div class="mb-4">
-            <label for="usuario" class="form-label">Usuário</label>
-            <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário" />
-          </div>
-          <div class="mb-4">
-            <label for="senha" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" />
-          </div>
-          <div class="d-flex justify-content-center mt-4">
-            <button type="submit" class="btn btn-light px-5">Entrar</button>
-          </div>
-        </form>
-      </div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CDN Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Clínica Médica</title>
+</head>
+<body>
+    <div class="background-dots">
+    <!-- Gere várias bolinhas -->
+    <span style="left: 5%; animation-duration: 6s; animation-delay: 0s;"></span>
+    <span style="left: 15%; animation-duration: 8s; animation-delay: 2s;"></span>
+    <span style="left: 25%; animation-duration: 7s; animation-delay: 4s;"></span>
+    <span style="left: 35%; animation-duration: 5s; animation-delay: 1s;"></span>
+    <span style="left: 45%; animation-duration: 9s; animation-delay: 3s;"></span>
+    <span style="left: 55%; animation-duration: 6s; animation-delay: 5s;"></span>
+    <span style="left: 65%; animation-duration: 7s; animation-delay: 2s;"></span>
+    <span style="left: 75%; animation-duration: 6s; animation-delay: 1s;"></span>
+    <span style="left: 85%; animation-duration: 10s; animation-delay: 0s;"></span>
+    <span style="left: 95%; animation-duration: 8s; animation-delay: 3s;"></span>
+</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+    <!-- Botão parar abrir o modal -->
+    <button class="open-modal" data-modal="modal-1">
+        Clínica Médica
+    </button>
+
+    <!-- Modal -->
+    <dialog id="modal-1">
+        <form>
+            <!-- Cabeçalho do modal -->
+            <div class="modal-header">
+                <!-- Título do modal -->
+                <h1 class="modal-title">
+                    Entrar em nossa plataforma
+                </h1>
+
+                <!-- Botão para fechar o modal -->
+                <button class="close-modal" type="button" data-modal="modal-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+    
+            <!-- Corpo do modal -->
+            <div class="modal-body">
+                <!-- Campo de e-mail -->
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="name@example.com"
+                    >
+                </div>
+    
+                <!-- Campo de senha -->
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        name="password"
+                        placeholder="•••••••"
+                    >
+                </div>
+
+                <!-- Opções de senha -->
+                <div class="password-options">
+                    <div class="remember-password">
+                        <input 
+                            type="checkbox" 
+                            id="remember_password" 
+                            name="remember_password"
+                        >
+                        <label for="remember_password">Lembrar me</label>
+                    </div>
+
+                    <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+                </div>
+
+                <!-- Botão de login -->
+                <button id="login_button" type="button">
+                    Acessar sua conta
+                </button>
+
+                <!-- Botão de registro -->
+                <div class="register">
+                    <span>Ainda não tem cadastro?</span>
+                    <a href="#">Cadastre-se aqui</a>
+                </div>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- JavaScript -->
+    <script src="/javascript/script.js"></script>
+    <script>
+    document.getElementById("login_button").addEventListener("click", function () {
+        window.location.href = "paginainicial.html";
+    });
+    </script>
+</body>
 </html>

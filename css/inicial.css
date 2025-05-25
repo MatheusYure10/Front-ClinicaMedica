@@ -1,0 +1,89 @@
+/* Link do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Corpo */
+body {
+    background-color: #f5f9ff;
+    color: #111928;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #6366F1;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #E0E7FF;
+    padding: 20px;
+}
+
+nav button {
+    background-color: #6366F1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #4F46E5;
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #111928;
+}
+
+main p {
+    font-size: 16px;
+    color: #4B5563;
+}
+
+/* Rodapé */
+footer {
+    background-color: #F3F4F6;
+    color: #6B7280;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}

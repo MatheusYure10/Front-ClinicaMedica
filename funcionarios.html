@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/funcionarios.css" />
+  <title>Funcionários Cadastrados</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Consultar Funcionários</h1>
+
+    <!-- Formulário de busca -->
+    <form class="search-form">
+      <div class="input-row">
+        <div class="input-group">
+          <label for="busca">Nome, CPF ou ID do funcionário</label>
+          <input type="text" id="busca" placeholder="Ex: Ana, 12345678900 ou 01" />
+        </div>
+        <button type="submit">Buscar</button>
+      </div>
+    </form>
+
+    <!-- Lista de funcionários -->
+    <div class="funcionarios-lista">
+      <h2>Funcionários encontrados:</h2>
+
+      <div class="funcionario-item">
+        <p><strong>Nome:</strong> Eduardo Cordeiro</p>
+        <p><strong>Cargo:</strong> Atendente</p>
+        <p><strong>Email:</strong> dudu.cordeiro@clinica.com</p>
+        <button class="editar-button">Editar Funcionário</button>
+        <button class="excluir-button">Excluir</button>
+      </div>
+
+      <div class="funcionario-item">
+        <p><strong>Nome:</strong> Dr. Everton Hipolito de Freitas</p>
+        <p><strong>Cargo:</strong> Médico</p>
+        <p><strong>CRM:</strong> 12345-SP</p>
+        <p><strong>Email:</strong> everton.fritas@clinica.com</p>
+        <button class="editar-button">Editar Funcionário</button>
+        <button class="excluir-button">Excluir</button>
+      </div>
+    </div>
+
+    <div class="form-buttons">
+      <button class="voltar-inicio" onclick="location.href='paginainicial.html'">Voltar</button>
+    </div>
+  </div>
+</body>
+</html>

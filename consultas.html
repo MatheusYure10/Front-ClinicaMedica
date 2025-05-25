@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/consultas.css" />
+  <title>Consultas do Paciente</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Consultar Paciente</h1>
+
+    <!-- Busca do paciente -->
+    <form class="search-form">
+      <div class="input-row">
+        <div class="input-group">
+          <label for="busca">Nome, CPF ou ID do paciente</label>
+          <input type="text" id="busca" placeholder="Ex: João, 12345678900 ou 15" />
+        </div>
+        <button type="submit">Buscar</button>
+      </div>
+    </form>
+
+    <!-- Lista de consultas -->
+    <div class="consultas-lista">
+      <h2>Consultas encontradas:</h2>
+
+      <div class="consulta-item">
+        <p><strong>Paciente:</strong> Crispim Luiz Martins da Silva</p>
+        <p><strong>Data:</strong> 2025-06-10</p>
+        <p><strong>Horário:</strong> 14:00</p>
+        <p><strong>Médico:</strong> Dra. Everton Hipolito de Freitas</p>
+        <button class="editar-button">Editar Consulta</button>
+        <button class="excluir-button">Cancelar Consulta</button>
+      </div>
+
+      <div class="consulta-item">
+        <p><strong>Paciente:</strong> Lucas Henrique dos Santos Amaral</p>
+        <p><strong>Data:</strong> 2025-06-24</p>
+        <p><strong>Horário:</strong> 10:30</p>
+        <p><strong>Médico:</strong> Dr. Walisson Alves Pereira</p>
+        <button class="editar-button">Editar Consulta</button>
+        <button class="excluir-button">Cancelar Consulta</button>
+      </div>
+    </div>
+
+    <div class="form-buttons">
+      <button class="voltar-inicio" onclick="location.href='paginainicial.html'">Voltar</button>
+    </div>
+  </div>
+</body>
+</html>
