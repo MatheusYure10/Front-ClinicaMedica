@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,28 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="/css/cadastro.css" />
+    <style>
+      .alerta {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        display: none;
+      }
+
+      .alerta.sucesso {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .alerta.erro {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+    </style>
 </head>
     <title>Cadastro</title>
 </head>
@@ -95,12 +117,98 @@
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" id="dataNascimento" name="dataNascimento" />
       </div>
-
+      
+        <div class="input-group">
+          <button type="button" id="btnPermissoes" class="botao-permissoes">Permissões</button>
+        </div>
+        
        <button type="submit">Cadastrar</button>
-  <button type="button" class="voltar-inicio" onclick="location.href='paginainicial.html'">
-    Voltar
-  </button>
+       <button type="button" class="voltar-inicio" onclick="location.href='paginainicial.html'">
+         Voltar
+       </button>
     </form>
+
+    <div class="alerta sucesso" id="alertaSucesso">Funcionário cadastrado com sucesso!</div>
+    <div class="alerta erro" id="alertaErro">Usuário não foi cadastrado.</div>
+
+    <div id="modalPermissoes" class="modal">
+      <div class="modal-content">
+        <span class="close" id="fecharModal">&times;</span>
+        <h2>Permissões</h2>
+    
+        <!-- Funcionário -->
+        <label><input type="checkbox" name="cadastrarFuncionario"> Cadastrar Funcionário</label><br>
+        <label><input type="checkbox" name="lerFuncionario"> Ler Funcionário</label><br>
+        <label><input type="checkbox" name="atualizarFuncionario"> Atualizar Funcionário</label><br>
+        <label><input type="checkbox" name="deletarFuncionario"> Deletar Funcionário</label><br>
+        <label><input type="checkbox" name="listarFuncionario"> Listar Funcionário</label><br>
+    
+        <!-- Paciente -->
+        <label><input type="checkbox" name="cadastrarPaciente"> Cadastrar Paciente</label><br>
+        <label><input type="checkbox" name="lerPaciente"> Ler Paciente</label><br>
+        <label><input type="checkbox" name="atualizarPaciente"> Atualizar Paciente</label><br>
+        <label><input type="checkbox" name="deletarPaciente"> Deletar Paciente</label><br>
+        <label><input type="checkbox" name="listarPaciente"> Listar Paciente</label><br>
+    
+        <!-- Consulta -->
+        <label><input type="checkbox" name="cadastrarConsulta"> Cadastrar Consulta</label><br>
+        <label><input type="checkbox" name="lerConsulta"> Ler Consulta</label><br>
+        <label><input type="checkbox" name="atualizarConsulta"> Atualizar Consulta</label><br>
+        <label><input type="checkbox" name="deletarConsulta"> Deletar Consulta</label><br>
+        <label><input type="checkbox" name="listarConsulta"> Listar Consulta</label><br>
+    
+        <!-- Especialidade -->
+        <label><input type="checkbox" name="cadastrarEspecialidade"> Cadastrar Especialidade</label><br>
+        <label><input type="checkbox" name="lerEspecialidade"> Ler Especialidade</label><br>
+        <label><input type="checkbox" name="atualizarEspecialidade"> Atualizar Especialidade</label><br>
+        <label><input type="checkbox" name="deletarEspecialidade"> Deletar Especialidade</label><br>
+        <label><input type="checkbox" name="listarEspecialidade"> Listar Especialidade</label><br>
+    
+        <!-- Convênio -->
+        <label><input type="checkbox" name="cadastrarConvenio"> Cadastrar Convênio</label><br>
+        <label><input type="checkbox" name="lerConvenio"> Ler Convênio</label><br>
+        <label><input type="checkbox" name="atualizarConvenio"> Atualizar Convênio</label><br>
+        <label><input type="checkbox" name="deletarConvenio"> Deletar Convênio</label><br>
+        <label><input type="checkbox" name="listarConvenio"> Listar Convênio</label><br>
+    
+        <!-- Prontuário -->
+        <label><input type="checkbox" name="cadastrarProntuario"> Cadastrar Prontuário</label><br>
+        <label><input type="checkbox" name="lerProntuario"> Ler Prontuário</label><br>
+        <label><input type="checkbox" name="atualizarProntuario"> Atualizar Prontuário</label><br>
+        <label><input type="checkbox" name="deletarProntuario"> Deletar Prontuário</label><br>
+        <label><input type="checkbox" name="listarProntuario"> Listar Prontuário</label><br>
+        
+        <button type="button" id="btnFecharModal">Salvar</button>
+        <br>         
+      </div>
+    </div>
   </main>
+
+  <script src="/js/script.js"></script>
+  <script>
+    const form = document.querySelector('.form');
+    const alertaSucesso = document.getElementById('alertaSucesso');
+    const alertaErro = document.getElementById('alertaErro');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const senha = document.getElementById('senha').value;
+
+      if (nome && senha) {
+        alertaErro.style.display = 'none';
+        alertaSucesso.style.display = 'block';
+      } else {
+        alertaSucesso.style.display = 'none';
+        alertaErro.style.display = 'block';
+      }
+
+      setTimeout(() => {
+        alertaSucesso.style.display = 'none';
+        alertaErro.style.display = 'none';
+      }, 4000);
+    });
+  </script>
 </body>
 </html>

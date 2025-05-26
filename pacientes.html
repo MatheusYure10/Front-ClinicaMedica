@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link rel="stylesheet" href="/css/pacientes.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Pacientes</title>
 </head>
 <body>
   <div class="container">
     <h1>Cadastro de Pacientes</h1>
-    <form>
+
+    <!-- ALERTA Bootstrap -->
+    <div id="alerta" class="alert d-none mt-3" role="alert"></div>
+
+    <form id="formCadastroPaciente">
       <div class="input-row">
         <div class="input-group">
           <label for="nome">Nome</label>
@@ -96,5 +100,35 @@
       </div>
     </form>
   </div>
+
+  <!-- Bootstrap JS + script personalizado -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const formPaciente = document.getElementById('formCadastroPaciente');
+    const alerta = document.getElementById('alerta');
+
+    function mostrarAlerta(mensagem, tipo) {
+      alerta.textContent = mensagem;
+      alerta.className = `alert alert-${tipo === 'sucesso' ? 'success' : 'danger'} mt-3`;
+      alerta.classList.remove('d-none');
+
+      setTimeout(() => {
+        alerta.classList.add('d-none');
+      }, 3000);
+    }
+
+    formPaciente.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Simulação de sucesso ou erro
+      const sucesso = Math.random() > 0.3; // 70% de chance de sucesso
+      if (sucesso) {
+        mostrarAlerta('Paciente cadastrado com sucesso!', 'sucesso');
+        formPaciente.reset();
+      } else {
+        mostrarAlerta('Erro ao cadastrar paciente.', 'erro');
+      }
+    });
+  </script>
 </body>
 </html>
