@@ -95,12 +95,71 @@
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" id="dataNascimento" name="dataNascimento" />
       </div>
-
+      
+        <div class="input-group">
+          <button type="button" id="btnPermissoes" class="botao-permissoes">Permissões</button>
+        </div>
+        
+       
+        
        <button type="submit">Cadastrar</button>
   <button type="button" class="voltar-inicio" onclick="location.href='paginainicial.html'">
     Voltar
   </button>
+  
     </form>
+    <div id="modalPermissoes" class="modal">
+      <div class="modal-content">
+        <span class="close" id="fecharModal">&times;</span>
+        <h2>Permissões</h2>
+    
+        <!-- Funcionário -->
+        <label><input type="checkbox" name="cadastrarFuncionario"> Cadastrar Funcionário</label><br>
+        <label><input type="checkbox" name="lerFuncionario"> Ler Funcionário</label><br>
+        <label><input type="checkbox" name="atualizarFuncionario"> Atualizar Funcionário</label><br>
+        <label><input type="checkbox" name="deletarFuncionario"> Deletar Funcionário</label><br>
+        <label><input type="checkbox" name="listarFuncionario"> Listar Funcionário</label><br>
+    
+        <!-- Paciente -->
+        <label><input type="checkbox" name="cadastrarPaciente"> Cadastrar Paciente</label><br>
+        <label><input type="checkbox" name="lerPaciente"> Ler Paciente</label><br>
+        <label><input type="checkbox" name="atualizarPaciente"> Atualizar Paciente</label><br>
+        <label><input type="checkbox" name="deletarPaciente"> Deletar Paciente</label><br>
+        <label><input type="checkbox" name="listarPaciente"> Listar Paciente</label><br>
+    
+        <!-- Consulta -->
+        <label><input type="checkbox" name="cadastrarConsulta"> Cadastrar Consulta</label><br>
+        <label><input type="checkbox" name="lerConsulta"> Ler Consulta</label><br>
+        <label><input type="checkbox" name="atualizarConsulta"> Atualizar Consulta</label><br>
+        <label><input type="checkbox" name="deletarConsulta"> Deletar Consulta</label><br>
+        <label><input type="checkbox" name="listarConsulta"> Listar Consulta</label><br>
+    
+        <!-- Especialidade -->
+        <label><input type="checkbox" name="cadastrarEspecialidade"> Cadastrar Especialidade</label><br>
+        <label><input type="checkbox" name="lerEspecialidade"> Ler Especialidade</label><br>
+        <label><input type="checkbox" name="atualizarEspecialidade"> Atualizar Especialidade</label><br>
+        <label><input type="checkbox" name="deletarEspecialidade"> Deletar Especialidade</label><br>
+        <label><input type="checkbox" name="listarEspecialidade"> Listar Especialidade</label><br>
+    
+        <!-- Convênio -->
+        <label><input type="checkbox" name="cadastrarConvenio"> Cadastrar Convênio</label><br>
+        <label><input type="checkbox" name="lerConvenio"> Ler Convênio</label><br>
+        <label><input type="checkbox" name="atualizarConvenio"> Atualizar Convênio</label><br>
+        <label><input type="checkbox" name="deletarConvenio"> Deletar Convênio</label><br>
+        <label><input type="checkbox" name="listarConvenio"> Listar Convênio</label><br>
+    
+        <!-- Prontuário -->
+        <label><input type="checkbox" name="cadastrarProntuario"> Cadastrar Prontuário</label><br>
+        <label><input type="checkbox" name="lerProntuario"> Ler Prontuário</label><br>
+        <label><input type="checkbox" name="atualizarProntuario"> Atualizar Prontuário</label><br>
+        <label><input type="checkbox" name="deletarProntuario"> Deletar Prontuário</label><br>
+        <label><input type="checkbox" name="listarProntuario"> Listar Prontuário</label><br>
+        
+        <button type="button" id="btnFecharModal">Salvar</button>
+        <br>         
+      </div>
+    </div>
   </main>
+  <script src="/js/script.js"></script>
 </body>
 </html>

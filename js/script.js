@@ -29,3 +29,38 @@ closeButtons.forEach((button) => {
     modal.close();
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnPermissoes = document.getElementById('btnPermissoes');
+  const modal = document.getElementById('modalPermissoes');
+  const fecharModal = document.getElementById('fecharModal');
+
+  btnPermissoes.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  fecharModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+document.getElementById("btnPermissoes").addEventListener("click", function () {
+  document.getElementById("modalPermissoes").style.display = "block";
+});
+
+document.getElementById("fecharModal").addEventListener("click", function () {
+  document.getElementById("modalPermissoes").style.display = "none";
+});
+
+document.getElementById("btnFecharModal").addEventListener("click", function () {
+  document.getElementById("modalPermissoes").style.display = "none";
+});
+
+
+
+
